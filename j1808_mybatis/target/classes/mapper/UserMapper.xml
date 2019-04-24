@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+        <!DOCTYPE mapper
+                PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+                "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qf.pojo.User">
+
+
+    <select id="findAll" resultType="com.qf.pojo.User">
+         select * from USER
+    </select>
+    <select id="findAllById" parameterType="int" resultType="com.qf.pojo.UserInfo">
+        select * from userinfo where userID=#{id}
+    </select>
+    <insert id="addUserInfo" parameterType="com.qf.pojo.UserInfo" >
+        insert into userinfo values (SQE_USERINFO.nextval,#{password},#{UserName})
+    </insert>
+    <update id="updateById" parameterType="com.qf.pojo.UserInfo">
+
+    </update>
+</mapper>
